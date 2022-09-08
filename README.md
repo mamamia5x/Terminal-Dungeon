@@ -18,14 +18,20 @@ The X (or width) square is read from left to right. A one (`1`) here would mean 
 
 If you would like your player to spawn at X=2 and Y=3, you'd have to make the third line `3,2`. **Remember**: make sure to add no whitespace to any of these lines.
 
-The rest of the lines are custom points. _Implentation for special pieces will be implemented soon._ They follow the same format as the player spawn. The difference here is adding another comma and a letter. The letter will appear at the spot you have created. So if you'd like to have a Chest at point `2,2`, you'd have to make the line look like `2,2,C`. You can add as many lines as you want, with the rest of these lines being used to add custom points. **Remember**: Do not add any whitespace.
+The rest of the lines are custom points. _Implentation for special pieces will be implemented soon._ They follow the same format as the player spawn. The difference here is adding another comma and a letter. The letter will appear at the spot you have created. So if you'd like to have a Wall at point `2,2`, you'd have to make the line look like `2,2,W`. You can add as many lines as you want, with the rest of these lines being used to add custom points. **Remember**: Do not add any whitespace.
+
+Current custom blocks that work are:  
+**W**: Wall. The player cannot go into this letter.  
+**E**: Exit. The player will go to the next level when they touch this piece.
+
+**EMPTY LINES WILL THROW AN ERROR**
 
 A finished version of this level would look like:
 ```txt
 3
 4
 3,2
-2,2,C
+2,2,W
 ```
 and the level would look like:
 ```txt
@@ -34,12 +40,17 @@ and the level would look like:
 ╠═══╬═══╬═══╣
 ║   ║ X ║   ║
 ╠═══╬═══╬═══╣
-║   ║ C ║   ║
+║   ║ W ║   ║
 ╠═══╬═══╬═══╣
 ║   ║   ║   ║
 ╚═══╩═══╩═══╝
 ```
 ## Version History
 ### V.0.0.1
-##### Current Build of the game
-Development of table's and implementation of level generating.
+##### Completed 9.8.22
+* First build of the game
+* Added Table generator
+* Level Loading
+* Custom level scripting
+* Player Movement
+* Custom Pieces (wall and exits)

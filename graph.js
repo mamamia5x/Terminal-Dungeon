@@ -1,5 +1,5 @@
 module.exports.settings = {
-  points: [],
+  points: {},
   player: [],
   lines: {
     top: {
@@ -39,7 +39,6 @@ module.exports.settings = {
 
 module.exports.makeGraph = () => {
   let graph = "";
-  let show = module.exports.settings.options.show;
   let length = module.exports.settings.options.length;
   let width  = module.exports.settings.dim.width;
   let height  = module.exports.settings.dim.height;
@@ -77,21 +76,16 @@ module.exports.makeGraph = () => {
       for (var loop = 1; loop <= width; loop ++){
         var cord = [iHeight / 2, loop];
         graph += settings.lines.sides.normal.left;
-        var found = "";
-        var totalCount = 0; //try to catch player at certain point
+        var found = settings.points[cord[0]][cord[1]];
         if (settings.player[0] == cord[0] && settings.player[1] == cord[1]){
             found = "X";
-            totalCount ++;
           }
-        for (var i in settings.points){ // watch these if statements
-          if (settings.points[i][0] == cord[0] && settings.points[i][1] == cord[1]){
-            found = settings.points[i][2];
-            totalCount ++; // could be used to find event
-          }
-        }
-        if (totalCount >= 2){
-          console.log("TOUCHING SOMETHING")
-        }
+        // for (var i in settings.points){ // watch these if statements
+        //   if (settings.points[i][0] == cord[0] && settings.points[i][1] == cord[1]){
+        //     found = settings.points[i][2];
+        //     totalCount ++; // could be used to find event
+        //   }
+        // }
         if (found == ""){
           graph += makeSize("");
         }
@@ -117,7 +111,8 @@ module.exports.makeGraph = () => {
     graph += "\n";
   }
   console.log(graph);
-  return userEvent; // Returns event to run (if any)
+  // return userEvent; // Returns event to run (if any)
+  // dont know if I should return just yet
   
 }
 function makeSize(string){
