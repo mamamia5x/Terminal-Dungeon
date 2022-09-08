@@ -18,7 +18,8 @@ JSON.clone = function(obj) {
 move();
 function move(){
   if (!debug) console.clear();
-  console.log(display.display(floor,0,0,0,0,0));
+  //floor,health,max health,level,xp,maxXp(for this lvl),$$
+  console.log(display.display(floor,100,100,0,10,100,0));
   graph.makeGraph();
   console.log("You can go: \n(W) Up\n(S) Down\n(A) Left\n(D) Right");
   var originalPoint = JSON.clone(graph.settings.player);
