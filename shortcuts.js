@@ -97,6 +97,9 @@ module.exports.reverseStr = function(str){
   return str;
 }
 
+module.exports.bold = '\x1b[1m';
+module.exports.itallic = '\x1b[3m';
+
 /*
 ___________                   __  .__                      
 \_   _____/_ __  ____   _____/  |_|__| ____   ____   ______

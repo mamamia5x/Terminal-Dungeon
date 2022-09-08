@@ -46,6 +46,14 @@ and the level would look like:
 ╚═══╩═══╩═══╝
 ```
 ## Version History
+###### Note: GitHub Releases will have the latest working release
+### V.0.0.2
+#### Under Development
+**Planned**:
+* GUI
+* XP
+* Health
+* Battles? (Maybe in next update)
 ### V.0.0.1
 ##### Completed 9.8.22
 * First build of the game

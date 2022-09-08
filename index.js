@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')();
 const short = require('./shortcuts.js');
 const graph =  require('./graph.js');
 const levelGen = require('./levels.js');
+const display = require('./display.js');
 
 var debug = false;
 var floor = 1;
@@ -17,6 +18,7 @@ JSON.clone = function(obj) {
 move();
 function move(){
   if (!debug) console.clear();
+  console.log(display.display(floor,0,0,0,0,0));
   graph.makeGraph();
   console.log("You can go: \n(W) Up\n(S) Down\n(A) Left\n(D) Right");
   var originalPoint = JSON.clone(graph.settings.player);
